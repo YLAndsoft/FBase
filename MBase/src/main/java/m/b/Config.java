@@ -25,7 +25,7 @@ public class Config {
 
 
     public static boolean isBaiDuStatistics;
-    public static boolean isLog;
+    public static boolean isLog=true;
 
     /**
      * 是否开启百度统计
