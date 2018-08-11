@@ -42,6 +42,18 @@ public class Config {
         isLog = log;
     }
 
+    /**
+     * 通过code码区分事件类型
+     */
+    public static final class EventCode {
+        public static final int CODE_A = 11;
+        public static final int CODE_B = 22;
+        public static final int CODE_C = 33;
+        public static final int CODE_D = 44;
+        public static final int CODE_E = 55;
+        public static final int CODE_F = 66;
+        public static final int CODE_G = 77;
+    }
 
 
 }

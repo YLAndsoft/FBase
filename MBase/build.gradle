@@ -37,6 +37,15 @@ dependencies {
     /**RecyclerView依赖*/
     implementation 'com.android.support:recyclerview-v7:26.+'
     /**图片加载框架*/
-    //implementation 'com.github.bumptech.glide:glide:4.7.1'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
+    /**eventbus*/
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    /**Gson解析*/
+    implementation 'com.google.code.gson:gson:2.8.2'
+    /**上拉，下拉框架*/
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    /**权限框架*/
+    implementation 'com.lovedise:permissiongen:0.0.6'
+
+
 }
