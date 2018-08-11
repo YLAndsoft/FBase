@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="c_66">#666666</color>
+    <!-- 覆盖颜色 -->
+    <color name="bgColor_overlay_black">#95000000</color>
+    <!-- 窗口背景颜色 -->
+    <color name="bgColor_svprogressdefaultview">@color/white</color>
+    <!-- 标题颜色 -->
+    <color name="textColor_svprogresshuddefault_msg">#000000</color>
+    <color name="roundColor_svprogresshuddefault">#e5e5e5</color>
+    <color name="roundProgressColor_svprogresshuddefault">@color/white</color>
+    <!-- 覆盖颜色 -->
+    <color name="bgColor_overlay">#60000000</color>
+    <!-- 窗口背景颜色 -->
+    <color name="bgColor_alertview_alert">#f8f8f8</color>
+    <!-- 标题颜色 -->
+    <color name="textColor_alert_title">#000000</color>
+    <color name="textColor_actionsheet_title">#8f8f8f</color>
+    <!-- 消息颜色 -->
+    <color name="textColor_alert_msg">#000000</color>
+    <color name="textColor_actionsheet_msg">#8f8f8f</color>
+    <!-- 线条颜色 -->
+    <color name="bgColor_divier">#d7d7db</color>
+    <!--错误颜色-->
+    <color name="error_color">#7c7c7c</color>
+    <!--不透明度值:-->
+    <color name="ts_100">#FF000000</color><!--100%-->
+    <color name="ts_95">#F2000000</color><!--95%-->
+    <color name="ts_90">#E6000000</color><!--90%-->
+    <color name="ts_85">#D9000000</color><!--85%-->
+    <color name="ts_80">#CC000000</color><!--80%-->
+    <color name="ts_75">#BF000000</color><!--75%-->
+    <color name="ts_70">#B3000000</color><!--70%-->
+    <color name="ts_65">#A6000000</color><!--65%-->
+    <color name="ts_60">#99000000</color><!--60%-->
+    <color name="ts_55">#8C000000</color><!--55%-->
+    <color name="ts_50">#80000000</color><!--50%-->
+    <color name="ts_45">#73000000</color><!--45%-->
+    <color name="ts_40">#66000000</color><!--40%-->
+    <color name="ts_35">#59000000</color><!--35%-->
+    <color name="ts_30">#4D000000</color><!--30%-->
+    <color name="ts_25">#40000000</color><!--25%-->
+    <color name="ts_20">#33000000</color><!--20%-->
+    <color name="ts_15">#26000000</color><!--15%-->
+    <color name="ts_10">#1A000000</color><!--10%-->
+    <color name="ts_5">#0D000000</color><!--5%-->
+    <color name="ts_0">#00000000</color><!--0%-->
+
+</resources>

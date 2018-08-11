@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    /**
+     * xUtils3 框架，选择原因：数据库，网络，注解，集成了三种,github5000+的star,
+     */
+    implementation 'org.xutils:xutils:3.5.0'
+    /**百度统计，个人需求*/
+    implementation 'com.baidu.mobstat:mtj-sdk:latest.integration'
+    /**RecyclerView依赖*/
+    implementation 'com.android.support:recyclerview-v7:26.+'
+    /**图片加载框架*/
+    //implementation 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+}
