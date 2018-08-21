@@ -1,15 +1,19 @@
 package m.b.utils;
 
 import org.xutils.common.Callback;
+import org.xutils.common.util.KeyValue;
 import org.xutils.ex.HttpException;
 import org.xutils.http.HttpMethod;
 import org.xutils.http.RequestParams;
+import org.xutils.http.body.MultipartBody;
 import org.xutils.x;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,7 +22,7 @@ import java.util.Map;
 
 public class XutilsHttp {
     //接口回调
-   public interface XUilsCallBack{
+   public interface XUtilsCallBack{
         void onResponse(String result);
         void onFail(String result);
     }
@@ -28,7 +32,7 @@ public class XutilsHttp {
      * @param map 参数集合
      * @param  xCallBack 请求结果回调
      */
-    public static void xUtilsGet(String url,Map<String,String> map,final XUilsCallBack xCallBack){
+    public static void xUtilsGet(String url,Map<String,String> map,final XUtilsCallBack xCallBack){
         RequestParams params = new RequestParams(url);
         if (null != map && !map.isEmpty()){
             for (Map.Entry<String,String> entry : map.entrySet()){
@@ -80,7 +84,7 @@ public class XutilsHttp {
      * @param cacheMaxAge 缓存最大存活时间 (单位毫秒)默认：10分钟
      * @param  xCallBack 请求结果回调
      */
-    public static void xUtilsGetCache(String url,Map<String,String> map,int cacheMaxAge,final XUilsCallBack xCallBack){
+    public static void xUtilsGetCache(String url,Map<String,String> map,int cacheMaxAge,final XUtilsCallBack xCallBack){
         RequestParams params = new RequestParams(url);
         if (null != map && !map.isEmpty()){
             for (Map.Entry<String,String> entry : map.entrySet()){
@@ -147,7 +151,7 @@ public class XutilsHttp {
      * @param params 参数集合,自定义请求头
      * @param  xCallBack 请求结果回调
      */
-    public static void xUtilsGet(RequestParams params, final XUilsCallBack xCallBack){
+    public static void xUtilsGet(RequestParams params, final XUtilsCallBack xCallBack){
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -176,7 +180,7 @@ public class XutilsHttp {
      * @param map 参数集合
      * @param xCallBack  请求回调接口
      */
-    public static void xUtilsPost(String url, Map<String,String> map, final XUilsCallBack xCallBack){
+    public static void xUtilsPost(String url, Map<String,String> map, final XUtilsCallBack xCallBack){
         RequestParams params = new RequestParams(url);
         if (null != map && !map.isEmpty()){
             for (Map.Entry<String,String> entry : map.entrySet()){
@@ -211,7 +215,7 @@ public class XutilsHttp {
      * @param params 参数集合
      * @param xCallBack  请求回调接口
      */
-    public static void xUtilsPost(RequestParams params, final XUilsCallBack xCallBack){
+    public static void xUtilsPost(RequestParams params, final XUtilsCallBack xCallBack){
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -240,7 +244,7 @@ public class XutilsHttp {
      * @param map 参数集合
      * @param xCallBack  请求回调接口
      */
-    public static void xUtilsRequest(String url, Map<String,String> map, final XUilsCallBack xCallBack){
+    public static void xUtilsRequest(String url, Map<String,String> map, final XUtilsCallBack xCallBack){
         RequestParams params = new RequestParams(url);
         if (null != map && !map.isEmpty()){
             for (Map.Entry<String,String> entry : map.entrySet()){
@@ -273,7 +277,7 @@ public class XutilsHttp {
      * @param params 参数集合
      * @param xCallBack  请求回调接口
      */
-    public static void xUtilsRequest(RequestParams params, final XUilsCallBack xCallBack){
+    public static void xUtilsRequest(RequestParams params, final XUtilsCallBack xCallBack){
         x.http().request(HttpMethod.POST, params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -302,7 +306,7 @@ public class XutilsHttp {
      * @param map
      * @param xCallBack
      */
-    public static void xUtilsDownloadFile(final String url, String path,Map<String,String> map, final XUilsCallBack xCallBack) {
+    public static void xUtilsDownloadFile(final String url, String path,Map<String,String> map, final XUtilsCallBack xCallBack) {
         RequestParams params = new RequestParams(url);
         if (null != map && !map.isEmpty()){
             for (Map.Entry<String,String> entry : map.entrySet()){
@@ -356,6 +360,49 @@ public class XutilsHttp {
 
     }
 
+
+    /**
+     * 单个文件上传
+     * @param url 上传 的地址
+     * @param upFileName 上传的文件
+     * @param map map集合参数
+     * @param xCallBack 回调
+     */
+    public static void uploadFile(final String url, String upFileName,Map<String,String> map,final XUtilsCallBack xCallBack){
+        RequestParams params = new RequestParams(url);
+        if (null != map && !map.isEmpty()){
+            for (Map.Entry<String,String> entry : map.entrySet()){
+                params.addBodyParameter(entry.getKey(),entry.getValue());
+            }
+        }
+        File file = new File(upFileName);
+        List<KeyValue> list = new ArrayList<>();
+        list.add(new KeyValue("file",file));
+        MultipartBody body=new MultipartBody(list,"UTF-8");
+        params.setRequestBody(body);
+        params.setMultipart(true);
+        x.http().post(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                //上传成功回调
+            }
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                //上传失败回调
+            }
+            @Override
+            public void onCancelled(CancelledException cex) {
+                //取消上传
+            }
+
+            @Override
+            public void onFinished() {
+                //上传完成
+            }
+        });
+
+
+    }
 
 
 
