@@ -17,7 +17,6 @@ import m.b.Config;
 public abstract class BaseFragment extends Fragment implements View.OnClickListener{
     protected View mContextView = null;
     protected Context mContext;
-    protected  boolean isLoadData;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

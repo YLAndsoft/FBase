@@ -50,8 +50,6 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements V
         super.onCreate(savedInstanceState);
         this.mContext = this;
         this.fm = getSupportFragmentManager();
-        Intent intent = getIntent();
-        initParms(intent);
         try{
             mContextView = LayoutInflater.from(this).inflate(bindLayout(), null);
         }catch (Exception ex){
@@ -163,11 +161,6 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements V
         ft.replace(flResId, fragment);
         ft.commit();
     }
-    /**
-     * [初始化参数]
-     * @param intent
-     */
-    public abstract void initParms(Intent intent);
 
     /**
      * [绑定布局]

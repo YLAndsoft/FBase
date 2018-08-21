@@ -48,38 +48,21 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
-        Intent intent = getIntent();
-        initParms(intent);//获取其他界面传递过来的参数
         try{
             mContextView = LayoutInflater.from(mContext).inflate(bindLayout(), null);
         }catch (Exception ex){
             showToast("布局加载异常！");
             return;
         }
-        if (mAllowFullScreen) { //设置全屏
-            requestWindowFeature(Window.FEATURE_NO_TITLE);
-        }
-        if (isSetStatusBar) { //设置沉淀式状态栏
-            steepStatusBar();
-        }
-        if(isSetActionBarColor){ //设置通知栏的颜色
-            setActionBarColor(mResColor);
-        }
-        if (!isAllowScreenRoate) { //禁止屏幕旋转
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        }
+        if (mAllowFullScreen)requestWindowFeature(Window.FEATURE_NO_TITLE);//设置全屏
+        if (isSetStatusBar)steepStatusBar();//设置沉淀式状态栏
+        if(isSetActionBarColor)setActionBarColor(mResColor);//设置通知栏的颜色
+        if (!isAllowScreenRoate)setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); //禁止屏幕旋转
         setContentView(mContextView); //设置布局
         initView(mContextView);
         initListener();
         initData(this);
     }
-
-    /**
-     * [初始化参数,接收传递过来的数据]
-     * @param intent
-     */
-    public abstract void initParms(Intent intent);
-
     /**
      * 绑定布局
      * @return
