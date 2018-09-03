@@ -1,8 +1,3 @@
-# BaseProject
-此依赖是平常开发中对Activity的一个封装,以及经常使用的一些工具及自定义View等等。
-=======
-使用：
-========
 Add it in your root build.gradle at the end of repositories:<br>
 ```java
  暂时还没发布,还在测试阶段
