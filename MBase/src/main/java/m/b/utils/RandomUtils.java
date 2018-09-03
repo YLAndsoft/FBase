@@ -3,8 +3,10 @@ package m.b.utils;
 import java.util.Random;
 
 /**
- * 随机工具类
- * Created by DN on 2017/12/19.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: 随机工具相关
  */
 
 public class RandomUtils {

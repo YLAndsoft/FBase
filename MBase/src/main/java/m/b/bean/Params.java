@@ -3,6 +3,12 @@ package m.b.bean;
 import java.io.Serializable;
 import java.util.Map;
 
+/**
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base网络参数相关bean
+ */
 public class Params<T> implements Serializable {
     /**
      * 地址

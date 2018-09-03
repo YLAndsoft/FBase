@@ -20,7 +20,10 @@ import m.b.Config;
 import m.b.R;
 
 /**
- * Created by DN on 2018/5/28.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base相关
  */
 
 public  abstract class BaseAppLication extends Application {

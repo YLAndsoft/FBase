@@ -3,7 +3,12 @@ package m.b.utils;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-
+/**
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: 排序相关
+ */
 public class ComparableUtils {
     private ComparableUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");

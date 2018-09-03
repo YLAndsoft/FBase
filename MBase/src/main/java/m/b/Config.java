@@ -1,10 +1,11 @@
 package m.b;
 
 /**
- * 工程配置文件
- * Created by DN on 2018/6/11.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: 工程配置相关
  */
-
 public class Config {
     private Config() {
         throw new AssertionError();

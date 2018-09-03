@@ -15,7 +15,10 @@ import com.baidu.mobstat.StatService;
 import m.b.Config;
 
 /**
- * Created by DN on 2018/1/10.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base相关
  */
 
 public abstract class BaseLazyLoadFragment extends Fragment implements View.OnClickListener {

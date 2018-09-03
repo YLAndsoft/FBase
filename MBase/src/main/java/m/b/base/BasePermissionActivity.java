@@ -11,7 +11,12 @@ import android.view.View;
 import kr.co.namee.permissiongen.PermissionFail;
 import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;
-
+/**
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base相关
+ */
 public abstract class BasePermissionActivity extends BaseActivity {
 
 
@@ -28,8 +33,9 @@ public abstract class BasePermissionActivity extends BaseActivity {
      * @return
      */
     public abstract void onPermissionsSuccess();
+    
     @Override
-    public void initView(View view) {
+    public void initData(Context mContext) {
         initPermission(requestPermissions());
     }
 

@@ -17,7 +17,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by DN on 2017/12/8.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: 网络请求相关
  */
 
 public class XutilsHttp {

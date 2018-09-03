@@ -9,13 +9,18 @@ import m.b.utils.GsonUtils;
 import m.b.utils.NetworkUtils;
 import m.b.utils.StringUtils;
 import m.b.utils.XutilsHttp;
-
+/**
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base相关
+ */
 public abstract class BaseNetFragmentActivity extends BaseFragmentActivity {
     /**
      * 获取参数
      * @return
      */
-    public abstract Params getParams();
+    public abstract Params setParams();
 
     /**
      * 网络请求结果,最终结果会保存在Params中，和配置参数一起返回
@@ -30,7 +35,7 @@ public abstract class BaseNetFragmentActivity extends BaseFragmentActivity {
     public abstract void onNetError(String error);
     @Override
     public void initData(Context mContext) {
-        final Params params = getParams();
+        final Params params = setParams();
         if(null==params){
             onNetError("未配置参数!");
             return;
@@ -39,7 +44,7 @@ public abstract class BaseNetFragmentActivity extends BaseFragmentActivity {
             onNetError("请检查网络是否连接!");
             return;
         }
-        XutilsHttp.xUtilsPost(params.getURL(), params.getMap(), new XutilsHttp.XUilsCallBack() {
+        XutilsHttp.xUtilsPost(params.getURL(), params.getMap(), new XutilsHttp.XUtilsCallBack() {
             @Override
             public void onResponse(String result) {
                 if(StringUtils.isBlank(result)){

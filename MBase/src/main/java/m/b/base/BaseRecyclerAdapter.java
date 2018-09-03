@@ -10,9 +10,11 @@ import android.view.ViewGroup;
 import java.util.List;
 
 /**
- * Created by DN on 2018/4/12.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base相关
  */
-
 public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseRecyclerHolder>  {
     private Context context;//上下文
     private List<T> list;//数据源

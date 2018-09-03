@@ -13,7 +13,6 @@ import m.b.Config;
 /**
  * Created by DN on 2017/7/22.
  */
-
 public abstract class BaseFragment extends Fragment implements View.OnClickListener{
     protected View mContextView = null;
     protected Context mContext;

@@ -5,7 +5,12 @@ import m.b.bean.EventBusEvent;
 /**
  * Created by DN on 2018/7/9.
  */
-
+/**
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: EventBus广播相关
+ */
 public class EventBusUtils {
     /**
      * 注册

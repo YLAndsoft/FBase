@@ -1,15 +1,15 @@
 package m.b.base;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
 import m.b.R;
-
 /**
- * Created by DN on 2017/7/22.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base相关
  */
-
 public abstract class MenuFragmentActivity extends BaseFragmentActivity {
     private View[] tabRl;//菜单�?
     private View currentRl;//当前菜单�?

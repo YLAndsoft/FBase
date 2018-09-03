@@ -5,7 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by DN on 2018/6/29.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: 时间相关
  */
 
 public class TimeUtils {

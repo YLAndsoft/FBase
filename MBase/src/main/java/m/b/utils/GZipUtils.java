@@ -12,8 +12,11 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 /**
- * GZIP工具，主要用于将JSON字符串压缩、解压------一般用字符串压缩 目前还没有用finally把流关闭。
- * */
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: GZip解压相关
+ */
 public abstract class GZipUtils {
 
     public static final int BUFFER = 1024;

@@ -11,10 +11,12 @@ import m.b.utils.StringUtils;
 
 /**
  * 数据库管理类
- * Created by DN on 2018/6/29.
  * 主键设置成自增长：replace():插入、更新的效果。saveOrUpdate():插入的效果
  * 主键设置成不是自增长：replace():插入的效果。saveOrUpdate()插入、更新的效果。注意：更新的时候主键要对应的上
- * Created by DN on 2018/6/29.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: 数据库相关
  */
 
 public class DBManager {

@@ -7,10 +7,11 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 /**
- * Gson解析工具类
- * Created by DN on 2018/5/4.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: GSON解析相关
  */
-
 public class GsonUtils {
 
     private GsonUtils() {

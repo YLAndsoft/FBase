@@ -3,7 +3,10 @@ package m.b.base;
 import android.support.annotation.NonNull;
 
 /**
- * 对实体类,属性排序
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base相关
  */
 public abstract class BaseComparable implements Comparable{
 

@@ -12,6 +12,10 @@ import m.b.utils.XutilsHttp;
 
 /**
  * 如想使用网络，可以继承此类，反之，直接继承BaseActivity
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base相关
  */
 public abstract class BaseNetActivity extends BaseActivity {
 
@@ -19,7 +23,7 @@ public abstract class BaseNetActivity extends BaseActivity {
      * 获取参数
      * @return
      */
-    public abstract Params getParams();
+    public abstract Params setParams();
 
     /**
      * 网络请求结果,最终结果会保存在Params中，和配置参数一起返回
@@ -35,7 +39,7 @@ public abstract class BaseNetActivity extends BaseActivity {
 
     @Override
     public void initData(Context mContext) {
-        final Params params = getParams();
+        final Params params = setParams();
         if(null==params){
             onNetError("未配置参数!");
             return;
@@ -44,7 +48,7 @@ public abstract class BaseNetActivity extends BaseActivity {
             onNetError("请检查网络是否连接!");
             return;
         }
-        XutilsHttp.xUtilsPost(params.getURL(), params.getMap(), new XutilsHttp.XUilsCallBack() {
+        XutilsHttp.xUtilsPost(params.getURL(), params.getMap(), new XutilsHttp.XUtilsCallBack() {
             @Override
             public void onResponse(String result) {
                 if(StringUtils.isBlank(result)){

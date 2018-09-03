@@ -15,10 +15,11 @@ import m.b.R;
 import m.b.utils.StringUtils;
 
 /**
- * BaseRecyclerView的封装
- * Created by DN on 2018/4/12.
+ * @author: FYL
+ * @time: 2018/9/3
+ * @email:347933430@qq.com
+ * @describe: base相关
  */
-
 public class BaseRecyclerHolder extends RecyclerView.ViewHolder {
     private SparseArray<View> views;
     private Context context;
