@@ -3,6 +3,9 @@
     <color name="white">#ffffff</color>
     <color name="transparent">#00000000</color>
     <color name="c_66">#666666</color>
+
+    <color name="background_tab_pressed">#00000000</color>
+
     <!-- 覆盖颜色 -->
     <color name="bgColor_overlay_black">#95000000</color>
     <!-- 窗口背景颜色 -->
