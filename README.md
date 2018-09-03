@@ -6,7 +6,18 @@
 Add it in your root build.gradle at the end of repositories:<br>
 
 ```java
- 暂时还没发布,还在测试阶段
+Add it in your root build.gradle at the end of repositories:
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://www.jitpack.io' }
+  }
+}
+
+Step 2. Add the dependency
+dependencies {
+  implementation 'com.github.YLAndsoft:FBase:0.0.1'
+}
 ```
 ### [详细使用见WIKI](https://github.com/YLAndsoft/FBase/wiki)  
 
