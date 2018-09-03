@@ -26,7 +26,7 @@ import m.b.R;
 /**
  * Created by DN on 2017/7/25.
  *
- * 滑动指示器
+ * 滑动指示器属性说明：
  * pst：sindicatorcolor颜色 在视图的底部的全宽度的线
  * pst：sunderlinecolor颜色选项卡之间的分隔
  * pst：sdividercolor颜色 滑动指示器

@@ -5,7 +5,7 @@
         <attr name="border_color" format="color" />
     </declare-styleable>
 
-    <declare-styleable name="SVProgressBar">
+    <declare-styleable name="FProgressBar">
         <attr name="roundColor" format="color"/>
         <attr name="roundProgressColor" format="color"/>
         <attr name="roundWidth" format="dimension"></attr>

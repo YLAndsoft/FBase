@@ -25,9 +25,9 @@ android {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     api 'com.android.support:appcompat-v7:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     /**
      * xUtils3 框架，选择原因：数据库，网络，注解，集成了三种
      */

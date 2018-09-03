@@ -19,18 +19,18 @@ import m.b.R;
  * Created by Sai on 15/8/15.
  * 默认的SVProgress效果
  */
-public class SVPDefaultView extends LinearLayout {
+public class FPDefaultView extends LinearLayout {
     private int resBigLoading = R.drawable.ic_svstatus_loading;
     private int resInfo = R.drawable.ic_svstatus_info;
     private int resSuccess = R.drawable.ic_svstatus_success;
     private int resError = R.drawable.ic_svstatus_error;
     private ImageView ivBigLoading, ivSmallLoading;
-    private SVProgressBar circleProgressBar;
+    private FProgressBar circleProgressBar;
     private TextView tvMsg;
 
     private RotateAnimation mRotateAnimation;
 
-    public SVPDefaultView(Context context) {
+    public FPDefaultView(Context context) {
         super(context);
         initViews();
         init();
@@ -88,7 +88,7 @@ public class SVPDefaultView extends LinearLayout {
         showProgress(string);
     }
 
-    public SVProgressBar getCircleProgressBar() {
+    public FProgressBar getCircleProgressBar() {
         return circleProgressBar;
     }
 

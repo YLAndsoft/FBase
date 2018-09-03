@@ -31,13 +31,13 @@ import m.b.widget.SystemBarTintManager;
 
 public abstract class BaseActivity extends Activity implements View.OnClickListener{
 
-    /** 是否沉浸状态栏**/
+    /** 是否沉浸状态栏,默认true**/
     private boolean isSetStatusBar = true;
-    /** 是否允许全屏 **/
+    /** 是否允许全屏,默认true **/
     private boolean mAllowFullScreen = true;
-    /** 是否设置状态栏颜色*/
+    /** 是否设置状态栏颜色,默认true*/
     private boolean isSetActionBarColor = true;
-    /** 是否禁止旋转屏幕 **/
+    /** 是否禁止旋转屏幕 false:禁止，true:不禁止,默认false**/
     private boolean isAllowScreenRoate = false;
     /** 当前Activity渲染的视图View **/
     protected View mContextView = null;

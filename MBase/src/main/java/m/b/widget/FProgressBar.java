@@ -17,7 +17,7 @@ import m.b.R;
 /**
  * Created by Sai on 15/9/1.
  */
-public class SVProgressBar extends View {
+public class FProgressBar extends View {
     private Context mContext;
     /**
      * 画笔对象的引用
@@ -59,30 +59,30 @@ public class SVProgressBar extends View {
     public static final int STROKE = 0;
     public static final int FILL = 1;
 
-    public SVProgressBar(Context context) {
+    public FProgressBar(Context context) {
         this(context, null);
         this.mContext = context;
 
     }
 
-    public SVProgressBar(Context context, AttributeSet attrs) {
+    public FProgressBar(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
         this.mContext = context;
     }
 
-    public SVProgressBar(Context context, AttributeSet attrs, int defStyle) {
+    public FProgressBar(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         this.mContext = context;
 
         paint = new Paint();
 
-        TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.SVProgressBar);
+        TypedArray mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.FProgressBar);
 
         // 获取自定义属性和默认值
-        roundColor = mTypedArray.getColor(R.styleable.SVProgressBar_roundColor, Color.BLUE);
-        roundProgressColor = mTypedArray.getColor(R.styleable.SVProgressBar_roundProgressColor,Color.GRAY);
-        roundWidth = mTypedArray.getDimension(R.styleable.SVProgressBar_roundWidth, 5);
-        max = mTypedArray.getInteger(R.styleable.SVProgressBar_max, 100);
+        roundColor = mTypedArray.getColor(R.styleable.FProgressBar_roundColor, Color.BLUE);
+        roundProgressColor = mTypedArray.getColor(R.styleable.FProgressBar_roundProgressColor,Color.GRAY);
+        roundWidth = mTypedArray.getDimension(R.styleable.FProgressBar_roundWidth, 5);
+        max = mTypedArray.getInteger(R.styleable.FProgressBar_max, 100);
 
         mTypedArray.recycle();
     }

@@ -20,13 +20,14 @@ import m.b.R;
 /**
  * Created by Sai on 15/8/15.
  */
-public class SVP {
+public class FP {
     private Context context;
-    private static SVP mSVProgressHUD;
+    private static FP mSVProgressHUD;
     private static final long DISMISSDELAYED = 1000;
-    private SVProgressHUDMaskType mSVProgressHUDMaskType;
+    private FProgressHUDMaskType mFProgressHUDMaskType;
 
-    public enum SVProgressHUDMaskType {
+    /*** 枚举类型*/
+    public enum FProgressHUDMaskType {
         None,  // 允许遮罩下面控件点击
         Clear,     // 不允许遮罩下面控件点击
         Black,     // 不允许遮罩下面控件点击，背景黑色半透明
@@ -34,7 +35,6 @@ public class SVP {
         ClearCancel,     // 不允许遮罩下面控件点击，点击遮罩消失
         BlackCancel,     // 不允许遮罩下面控件点击，背景黑色半透明，点击遮罩消失
         GradientCancel   // 不允许遮罩下面控件点击，背景渐变半透明，点击遮罩消失
-        ;
     }
 
     private final FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
@@ -42,15 +42,15 @@ public class SVP {
     );
     private ViewGroup decorView;//activity的根View
     private ViewGroup rootView;// mSharedView 的 根View
-    private SVPDefaultView mSharedView;
+    private FPDefaultView mSharedView;
 
     private Animation outAnim;
     private Animation inAnim;
     private int gravity = Gravity.CENTER;
 
-    private static final SVP getInstance(Context context) {
+    private static final FP getInstance(Context context) {
         if (mSVProgressHUD == null) {
-            mSVProgressHUD = new SVP();
+            mSVProgressHUD = new FP();
             mSVProgressHUD.context = context;
             mSVProgressHUD.gravity = Gravity.CENTER;
             mSVProgressHUD.initViews();
@@ -74,7 +74,7 @@ public class SVP {
         ));
     }
     protected void initDefaultView(){
-        mSharedView = new SVPDefaultView(context);
+        mSharedView = new FPDefaultView(context);
         params.gravity = gravity;
         mSharedView.setLayoutParams(params);
     }
@@ -110,12 +110,12 @@ public class SVP {
     }
 
     public static void show(Context context) {
-        getInstance(context).setMaskType(SVProgressHUDMaskType.Black);
+        getInstance(context).setMaskType(FProgressHUDMaskType.Black);
         getInstance(context).mSharedView.show();
         getInstance(context).svShow();
     }
 
-    public static void showWithMaskType(Context context,SVProgressHUDMaskType maskType) {
+    public static void showWithMaskType(Context context,FProgressHUDMaskType maskType) {
         //判断maskType
         getInstance(context).setMaskType(maskType);
         getInstance(context).mSharedView.show();
@@ -123,25 +123,25 @@ public class SVP {
     }
 
     public static void showWithStatus(Context context,String string) {
-        getInstance(context).setMaskType(SVProgressHUDMaskType.Black);
+        getInstance(context).setMaskType(FProgressHUDMaskType.Black);
         getInstance(context).mSharedView.showWithStatus(string);
         getInstance(context).svShow();
     }
 
-    public static void showWithStatus(Context context,String string, SVProgressHUDMaskType maskType) {
+    public static void showWithStatus(Context context,String string, FProgressHUDMaskType maskType) {
         getInstance(context).setMaskType(maskType);
         getInstance(context).mSharedView.showWithStatus(string);
         getInstance(context).svShow();
     }
 
     public static void showInfoWithStatus(Context context,String string) {
-        getInstance(context).setMaskType(SVProgressHUDMaskType.Black);
+        getInstance(context).setMaskType(FProgressHUDMaskType.Black);
         getInstance(context).mSharedView.showInfoWithStatus(string);
         getInstance(context).svShow();
         getInstance(context).scheduleDismiss();
     }
 
-    public static void showInfoWithStatus(Context context,String string, SVProgressHUDMaskType maskType) {
+    public static void showInfoWithStatus(Context context,String string, FProgressHUDMaskType maskType) {
         getInstance(context).setMaskType(maskType);
         getInstance(context).mSharedView.showInfoWithStatus(string);
         getInstance(context).svShow();
@@ -149,13 +149,13 @@ public class SVP {
     }
 
     public static void showSuccessWithStatus(Context context,String string) {
-        getInstance(context).setMaskType(SVProgressHUDMaskType.Black);
+        getInstance(context).setMaskType(FProgressHUDMaskType.Black);
         getInstance(context).mSharedView.showSuccessWithStatus(string);
         getInstance(context).svShow();
         getInstance(context).scheduleDismiss();
     }
 
-    public static void showSuccessWithStatus(Context context,String string, SVProgressHUDMaskType maskType) {
+    public static void showSuccessWithStatus(Context context,String string, FProgressHUDMaskType maskType) {
         getInstance(context).setMaskType(maskType);
         getInstance(context).mSharedView.showSuccessWithStatus(string);
         getInstance(context).svShow();
@@ -163,35 +163,35 @@ public class SVP {
     }
 
     public static void showErrorWithStatus(Context context,String string) {
-        getInstance(context).setMaskType(SVProgressHUDMaskType.Black);
+        getInstance(context).setMaskType(FProgressHUDMaskType.Black);
         getInstance(context).mSharedView.showErrorWithStatus(string);
         getInstance(context).svShow();
         getInstance(context).scheduleDismiss();
     }
 
-    public static void showErrorWithStatus(Context context,String string, SVProgressHUDMaskType maskType) {
+    public static void showErrorWithStatus(Context context,String string, FProgressHUDMaskType maskType) {
         getInstance(context).setMaskType(maskType);
         getInstance(context).mSharedView.showErrorWithStatus(string);
         getInstance(context).svShow();
         getInstance(context).scheduleDismiss();
     }
 
-    public static void showWithProgress(Context context,String string, SVProgressHUDMaskType maskType) {
+    public static void showWithProgress(Context context,String string, FProgressHUDMaskType maskType) {
         getInstance(context).setMaskType(maskType);
         getInstance(context).mSharedView.showWithProgress(string);
         getInstance(context).svShow();
     }
 
-    public static SVProgressBar getProgressBar(Context context){
+    public static FProgressBar getProgressBar(Context context){
         return getInstance(context).mSharedView.getCircleProgressBar();
     }
     public static void setText(Context context,String string){
         getInstance(context).mSharedView.setText(string);
     }
 
-    private void setMaskType(SVProgressHUDMaskType maskType) {
-        mSVProgressHUDMaskType = maskType;
-        switch (mSVProgressHUDMaskType) {
+    private void setMaskType(FProgressHUDMaskType maskType) {
+        mFProgressHUDMaskType = maskType;
+        switch (mFProgressHUDMaskType) {
             case None:
                 configMaskType(android.R.color.transparent, false, false);
                 break;
@@ -265,12 +265,12 @@ public class SVP {
     }
 
     public Animation getInAnimation() {
-        int res = SVProgressAnimateUtil.getAnimationResource(this.gravity, true);
+        int res = FProgressAnimateUtil.getAnimationResource(this.gravity, true);
         return AnimationUtils.loadAnimation(context, res);
     }
 
     public Animation getOutAnimation() {
-        int res = SVProgressAnimateUtil.getAnimationResource(this.gravity, false);
+        int res = FProgressAnimateUtil.getAnimationResource(this.gravity, false);
         return AnimationUtils.loadAnimation(context, res);
     }
 
