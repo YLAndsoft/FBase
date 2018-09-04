@@ -16,7 +16,7 @@ allprojects {
 
 Step 2. Add the dependency
 dependencies {
-  implementation 'com.github.YLAndsoft:FBase:0.0.1'
+  implementation 'com.github.YLAndsoft:FBase:0.0.2'
 }
 ```
 ### [详细使用见WIKI](https://github.com/YLAndsoft/FBase/wiki)  
