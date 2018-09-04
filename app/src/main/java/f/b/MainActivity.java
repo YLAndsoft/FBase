@@ -3,9 +3,12 @@ package f.b;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 import m.b.base.BaseActivity;
+import m.b.widget.AV;
 import m.b.widget.FP;
 public class MainActivity extends BaseActivity {
 
@@ -19,6 +22,10 @@ public class MainActivity extends BaseActivity {
     Button btn4;
     @ViewInject(value = R.id.btn5)
     Button btn5;
+    @ViewInject(value = R.id.btn6)
+    Button btn6;
+    @ViewInject(value = R.id.btn7)
+    Button btn7;
     @Override
     public int bindLayout() {
         return R.layout.activity_main;
@@ -34,6 +41,8 @@ public class MainActivity extends BaseActivity {
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
         btn5.setOnClickListener(this);
+        btn6.setOnClickListener(this);
+        btn7.setOnClickListener(this);
     }
 
     @Override
@@ -67,6 +76,28 @@ public class MainActivity extends BaseActivity {
                 FP.showErrorWithStatus(mContext,"加载失败,网络错误!", FP.FProgressHUDMaskType.Black);
                 break;
             case R.id.btn5:
+                AV.showPhoto(mContext, new AV.OnSelectClickListener() {
+                    @Override
+                    public void onSelectListener(int position) {
+                        showToast("点击了第" + position + "个");
+                    }
+                });
+                break;
+            case R.id.btn6:
+                AV.showSucess(mContext, "检查结果","没有任何毛病！");
+                break;
+            case R.id.btn7:
+                AV.showSelectView(mContext,
+                        "举报",//标题
+                        new String[]{"色情"}, //红色选择字体
+                        new String[]{"低俗","诈骗","赌博","与内容无关"},//蓝色选择字体
+                        new AV.OnSelectClickListener() { //点击事件回调
+                    @Override
+                    public void onSelectListener(int position) {
+                        showToast("点击了第" + position + "个");
+                    }
+                });
+
                 break;
         }
     }

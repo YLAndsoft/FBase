@@ -46,4 +46,7 @@ dependencies {
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
     /**权限框架*/
     api 'com.lovedise:permissiongen:0.0.6'
+    /**弹窗依赖*/
+    api 'com.bigkoo:alertview:1.0.3'
+
 }
