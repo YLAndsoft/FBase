@@ -104,5 +104,11 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<BaseRe
         notifyItemChanged(position,"ssss");
     }
 
+    public void addAll(List<T> lis){
+        if(lis==null||lis.size()<=0){return;}
+        list.addAll(lis);
+        this.notifyItemRangeInserted(list.size()-lis.size(),list.size());
+    }
+
 
 }

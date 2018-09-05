@@ -1,31 +1,36 @@
 package f.b;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
+
+import f.b.Smart.SmartRefreshActivity;
 import m.b.base.BaseActivity;
 import m.b.widget.AV;
 import m.b.widget.FP;
 public class MainActivity extends BaseActivity {
 
     @ViewInject(value = R.id.btn1)
-    Button btn1;
+    private Button btn1;
     @ViewInject(value = R.id.btn2)
-    Button btn2;
+    private Button btn2;
     @ViewInject(value = R.id.btn3)
-    Button btn3;
+    private Button btn3;
     @ViewInject(value = R.id.btn4)
-    Button btn4;
+    private Button btn4;
     @ViewInject(value = R.id.btn5)
-    Button btn5;
+    private Button btn5;
     @ViewInject(value = R.id.btn6)
-    Button btn6;
+    private Button btn6;
     @ViewInject(value = R.id.btn7)
-    Button btn7;
+    private Button btn7;
+    @ViewInject(value = R.id.btn8)
+    private Button btn8;
     @Override
     public int bindLayout() {
         return R.layout.activity_main;
@@ -43,6 +48,7 @@ public class MainActivity extends BaseActivity {
         btn5.setOnClickListener(this);
         btn6.setOnClickListener(this);
         btn7.setOnClickListener(this);
+        btn8.setOnClickListener(this);
     }
 
     @Override
@@ -97,7 +103,9 @@ public class MainActivity extends BaseActivity {
                         showToast("点击了第" + position + "个");
                     }
                 });
-
+                break;
+            case R.id.btn8:
+                startActivity(new Intent(mContext, SmartRefreshActivity.class));
                 break;
         }
     }

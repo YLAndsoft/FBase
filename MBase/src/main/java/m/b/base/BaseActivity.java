@@ -45,7 +45,7 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
     /**上文*/
     protected Context mContext;
     /**默认状态栏的颜色为透明*/
-    private int mResColor = R.color.transparent;
+    private int mResColor = R.color.colorPrimary;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
