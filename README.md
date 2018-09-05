@@ -21,7 +21,7 @@ dependencies {
 ```
 ### [详细使用见WIKI](https://github.com/YLAndsoft/FBase/wiki) 
 
-#### [下载体验demo](https://github.com/YLAndsoft/FBase/tree/master/app/src/main/assets/demo.apk) 
+#### [下载体验demo](https://project-1256156566.cos.ap-chengdu.myqcloud.com/demo.apk) 
 
 ```java 
  有疑问或者建议的同伴可以QQ好友或者邮箱留言我
