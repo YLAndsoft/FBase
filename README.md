@@ -55,6 +55,12 @@ dependencies {
 -keep class m.b.** {*;}
 # 不混淆资源类
 -keepclassmembers class **.R$* { *; }
+
+异常：Android Error:Execution failed for task ':app:transformClassesAndResourcesWithProguardForRelease'
+原因：Proguard 文件启用时报错，解决方式有两种，一种是如果你要禁用 proguard 文件，直接在项目的 build 文件中将 minifyEnabled 设置为 false，如果不想禁用 proguard 文件，那么可以将 
+-ignorewarnings -keep class * { public private *; } 
+添加到 Proguard 文件中，然后重新编译打包，这样就能解决打包报错的问题了！
+
 ```
 
 ### [详细使用见WIKI](https://github.com/YLAndsoft/FBase/wiki) 
