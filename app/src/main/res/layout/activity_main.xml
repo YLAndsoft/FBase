@@ -45,5 +45,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SmartRefresh"/>
+    <Button
+        android:id="@+id/btn9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="CardView"/>
 
 </LinearLayout>

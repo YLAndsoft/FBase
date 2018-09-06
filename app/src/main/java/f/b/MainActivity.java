@@ -1,7 +1,12 @@
 package f.b;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -10,6 +15,10 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import f.b.Smart.SmartRefreshActivity;
+import f.b.card.CardViewActivity;
+import kr.co.namee.permissiongen.PermissionFail;
+import kr.co.namee.permissiongen.PermissionGen;
+import kr.co.namee.permissiongen.PermissionSuccess;
 import m.b.base.BaseActivity;
 import m.b.widget.AV;
 import m.b.widget.FP;
@@ -31,6 +40,10 @@ public class MainActivity extends BaseActivity {
     private Button btn7;
     @ViewInject(value = R.id.btn8)
     private Button btn8;
+    @ViewInject(value = R.id.btn9)
+    private Button btn9;
+
+    private static final int PHOTO_PERMISS = 111;
     @Override
     public int bindLayout() {
         return R.layout.activity_main;
@@ -49,10 +62,21 @@ public class MainActivity extends BaseActivity {
         btn6.setOnClickListener(this);
         btn7.setOnClickListener(this);
         btn8.setOnClickListener(this);
+        btn9.setOnClickListener(this);
     }
 
     @Override
     public void initData(Context mContext) {
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            PermissionGen.with(MainActivity.this)
+                    .addRequestCode(PHOTO_PERMISS)
+                    .permissions(
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.ACCESS_FINE_LOCATION,
+                            Manifest.permission.READ_PHONE_STATE)
+                    .request();
+        }
     }
 
     @Override
@@ -107,7 +131,37 @@ public class MainActivity extends BaseActivity {
             case R.id.btn8:
                 startActivity(new Intent(mContext, SmartRefreshActivity.class));
                 break;
+            case R.id.btn9:
+                startActivity(new Intent(mContext, CardViewActivity.class));
+                break;
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionGen.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
+    }
+    @PermissionSuccess(requestCode = PHOTO_PERMISS)
+    public void requestPhotoSuccess(){
+        //成功之后的处理
+    }
+
+    @PermissionFail(requestCode = PHOTO_PERMISS)
+    public void requestPhotoFail(){
+        //失败之后的处理，我一般是跳到设置界面
+        goToSetting(MainActivity.this);
+    }
+
+    /***
+     * 去设置界面
+     */
+    public static void goToSetting(Context context){
+        //go to setting view
+        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+        Uri uri = Uri.fromParts("package", context.getPackageName(), null);
+        intent.setData(uri);
+        context.startActivity(intent);
     }
 
 }

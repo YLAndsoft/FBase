@@ -10,6 +10,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <!--百度统计权限-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +23,17 @@
         android:name="f.b.MyAppLication"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--统计ID-->
+        <meta-data android:name="BaiduMobAd_STAT_ID" android:value="dd139ca1a4" />
+        <!-- 渠道 -->
+        <meta-data android:name="BaiduMobAd_CHANNEL" android:value="baidu" />
+        <!-- 是否开启错误日志统计，默认为false -->
+        <meta-data android:name="BaiduMobAd_EXCEPTION_LOG" android:value="true" />
+        <!-- 日志仅在wifi网络下发送，默认为false -->
+        <meta-data android:name="BaiduMobAd_ONLY_WIFI" android:value="false" />
+
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +42,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Smart.SmartRefreshActivity" />
+        <activity android:name="f.b.card.CardViewActivity" />
+
+
     </application>
 
 </manifest>
