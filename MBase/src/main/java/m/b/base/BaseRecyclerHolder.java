@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 
 import m.b.R;
 import m.b.utils.StringUtils;
+import m.b.utils.ViewUtils;
 
 /**
  * @author: FYL
@@ -149,7 +150,8 @@ public class BaseRecyclerHolder extends RecyclerView.ViewHolder {
     @Deprecated
     public BaseRecyclerHolder setImageByUrl(int viewId,String url){
         if(!StringUtils.isEmpty(url)){
-            Glide.with(context).load(url).error(ContextCompat.getDrawable(context, R.drawable.data_error)).into((ImageView) getView(viewId));
+//            Glide.with(context).load(url).error(ContextCompat.getDrawable(context, R.drawable.data_error)).into((ImageView) getView(viewId));
+            ViewUtils.setImageUrl(context,(ImageView) getView(viewId),url);
         }
         return this;
     }

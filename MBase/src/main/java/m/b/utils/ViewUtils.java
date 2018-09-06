@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 
 import org.xutils.common.util.LogUtil;
 
@@ -85,6 +86,17 @@ public class ViewUtils {
             }
         }
     }
+
+
+    private static RequestOptions requestOptions;
+    private static RequestOptions getRequestOptions(Context mContext){
+        if(requestOptions==null){
+            requestOptions = new RequestOptions()
+                    .placeholder(mContext.getResources().getDrawable(R.drawable.default_error))
+                    .error(mContext.getResources().getDrawable(R.drawable.default_error));
+        }
+        return requestOptions;
+    }
     /**
      * 设置图片地址
      * @param context
@@ -97,8 +109,7 @@ public class ViewUtils {
                 if(result!=null){
                     Glide.with(context)
                             .load(result+"")
-                            .error(context.getResources().getDrawable(R.drawable.default_error))
-                            .placeholder(context.getResources().getDrawable(R.drawable.default_error))
+                            .apply(getRequestOptions(context))
                             .thumbnail(0.1f)
                             .into((ImageView) view);
                 }else{
@@ -122,7 +133,7 @@ public class ViewUtils {
                 if(result!=null){
                     Glide.with(context)
                             .load(result+"")
-                            .error(context.getResources().getDrawable(R.drawable.default_error))
+                            .apply(getRequestOptions(context))
                             .thumbnail(0.1f)
                             .into((ImageView) view);
                 }else{
@@ -145,7 +156,8 @@ public class ViewUtils {
         if(view instanceof ImageView){
             try{
                 if(result!=null){
-                    Glide.with(context).load(result+"").error(context.getResources().getDrawable(R.drawable.default_error)).centerCrop().into((ImageView) view);
+                    Glide.with(context).load(result+"")
+                            .apply(getRequestOptions(context)).into((ImageView) view);
                 }else{
                     ((ImageView) view).setImageDrawable(context.getResources().getDrawable(R.drawable.default_error));
                 }
@@ -165,7 +177,8 @@ public class ViewUtils {
         if(view instanceof ImageView){
             try{
                 if(result!=null){
-                    Glide.with(context).load(result).error(context.getResources().getDrawable(R.drawable.default_error)).centerCrop().into((ImageView) view);
+                    Glide.with(context).load(result)
+                            .apply(getRequestOptions(context)).into((ImageView) view);
                 }else{
                     ((ImageView) view).setImageDrawable(context.getResources().getDrawable(R.drawable.default_error));
                 }
