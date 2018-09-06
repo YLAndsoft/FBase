@@ -11,7 +11,7 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
-
+#xutils3混淆配置
 -keep class org.xutils.** { *; }
 -keep class * extends java.lang.annotation.Annotation { *; }
 #EventBus 3.0 混淆配置
@@ -41,10 +41,25 @@
 -keep  class  kr.co.namee.permissiongen.**  {  *; }
 #alertview 混淆配置
 -keep  class  com.bikoo.alertview.**  {  *; }
+
+-keep class android.support.v4.** { *; }
+-keep class android.support.v7.** { *; }
+-keep public class * extends android.support.v4.**
+-keep public class * extends android.support.v7.**
+-keep public class * extends android.app.Fragment
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+# 保持自定义控件类不被混淆
+-keepclassmembers class * extends android.app.Activity {
+   public void *(android.view.View);
+}
+-dontwarn android.support.**
 # base工程不做混淆
 -keep class m.b.** {*;}
 # 不混淆资源类
 -keepclassmembers class **.R$* { *; }
+
+-ignorewarnings -keep class * { public private *; }
 
 
 

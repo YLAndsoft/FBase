@@ -30,7 +30,7 @@ public class TestBaseNetActivity extends BaseNetActivity {
         return params;
     }
     @Override
-    public void onNetResult(Params params) {
+    public void onNetResult (Params params) {
         //网络请求结果回调，结果值在params.getObj(),
     }
     @Override
