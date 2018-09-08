@@ -3,7 +3,7 @@ package f.b.fragments;
 import android.view.View;
 
 import f.b.R;
-import m.b.base.BaseFragment;
+import f.base.BaseFragment;
 
 
 /**

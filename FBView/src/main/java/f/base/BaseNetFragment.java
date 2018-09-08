@@ -1,10 +1,8 @@
-package m.b.base;
-
-import android.content.Context;
+package f.base;
 
 import java.util.List;
 
-import m.b.bean.Params;
+import f.base.Params;
 import m.b.utils.GsonUtils;
 import m.b.utils.NetworkUtils;
 import m.b.utils.StringUtils;
@@ -15,7 +13,8 @@ import m.b.utils.XutilsHttp;
  * @email:347933430@qq.com
  * @describe: base相关
  */
-public abstract class BaseNetFragmentActivity extends BaseFragmentActivity {
+public abstract class BaseNetFragment extends BaseFragment {
+
     /**
      * 获取参数
      * @return
@@ -33,8 +32,9 @@ public abstract class BaseNetFragmentActivity extends BaseFragmentActivity {
      * @param error
      */
     public abstract void onNetError(String error);
+
     @Override
-    public void initData(Context mContext) {
+    protected void initData() {
         final Params params = setParams();
         if(null==params){
             onNetError("未配置参数!");
@@ -83,4 +83,5 @@ public abstract class BaseNetFragmentActivity extends BaseFragmentActivity {
             }
         });
     }
+
 }

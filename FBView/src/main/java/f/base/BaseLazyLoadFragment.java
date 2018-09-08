@@ -1,4 +1,4 @@
-package m.b.base;
+package f.base;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.baidu.mobstat.StatService;
 
-import m.b.Config;
+import f.base.BaseConfig;
 
 /**
  * @author: FYL
@@ -117,17 +117,17 @@ public abstract class BaseLazyLoadFragment extends Fragment implements View.OnCl
     protected final String TAG = "LazyLoadFragmentLog信息：";
 
     protected void showLog(int level, String msg) {
-        if (!Config.isLog) {
+        if (!BaseConfig.isLog) {
             return;
         }
         switch (level) {
-            case Config.LEVEL_1:
+            case BaseConfig.LEVEL_1:
                 Log.v(TAG, msg);
                 break;
-            case Config.LEVEL_2:
+            case BaseConfig.LEVEL_2:
                 Log.d(TAG, msg);
                 break;
-            case Config.LEVEL_3:
+            case BaseConfig.LEVEL_3:
                 Log.e(TAG, msg);
                 break;
             default:
@@ -143,13 +143,13 @@ public abstract class BaseLazyLoadFragment extends Fragment implements View.OnCl
     @Override
     public void onStart() {
         super.onStart();
-        if (Config.isBaiDuStatistics) StatService.onPageStart(mContext, "BaseFragment");
+        if (BaseConfig.isBaiDuStatistics) StatService.onPageStart(mContext, "BaseFragment");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (Config.isBaiDuStatistics) StatService.onPageEnd(mContext, "BaseFragment");
+        if (BaseConfig.isBaiDuStatistics) StatService.onPageEnd(mContext, "BaseFragment");
     }
 
 }

@@ -1,1 +1,1 @@
-include ':app', ':MBase'
+include ':app', ':MBase', ':FBView'

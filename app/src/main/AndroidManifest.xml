@@ -34,7 +34,7 @@
         <meta-data android:name="BaiduMobAd_ONLY_WIFI" android:value="false" />
 
 
-        <activity android:name=".MainActivity">
+        <activity android:name="f.b.fragments.TestBaseMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,7 +43,9 @@
         </activity>
         <activity android:name=".Smart.SmartRefreshActivity" />
         <activity android:name="f.b.card.CardViewActivity" />
-        <activity android:name="f.b.fragments.TestBaseMainActivity" />
+        <!--<activity android:name="f.b.fragments.TestBaseMainActivity" />-->
+        <activity android:name=".MainActivity"/>
+
 
 
     </application>

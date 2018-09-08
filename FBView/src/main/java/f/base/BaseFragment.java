@@ -1,4 +1,4 @@
-package m.b.base;
+package f.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import com.baidu.mobstat.StatService;
-import m.b.Config;
+import f.base.BaseConfig;
 
 /**
  * Created by DN on 2017/7/22.
@@ -83,15 +83,15 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      */
     public static final String TAG1 = "FragmentLog信息：";
     protected void showLog(int level,String msg){
-        if(!Config.isLog){return;}
+        if(!BaseConfig.isLog){return;}
         switch (level){
-            case Config.LEVEL_1:
+            case BaseConfig.LEVEL_1:
                 Log.v(TAG1,msg);
                 break;
-            case Config.LEVEL_2:
+            case BaseConfig.LEVEL_2:
                 Log.d(TAG1,msg);
                 break;
-            case Config.LEVEL_3:
+            case BaseConfig.LEVEL_3:
                 Log.e(TAG1,msg);
                 break;
             default:
@@ -105,13 +105,13 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onStart() {
         super.onStart();
-        if(Config.isBaiDuStatistics)StatService.onPageStart(mContext, "BaseFragment");
+        if(BaseConfig.isBaiDuStatistics)StatService.onPageStart(mContext, "BaseFragment");
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if(Config.isBaiDuStatistics)StatService.onPageEnd(mContext, "BaseFragment");
+        if(BaseConfig.isBaiDuStatistics)StatService.onPageEnd(mContext, "BaseFragment");
     }
 
 }

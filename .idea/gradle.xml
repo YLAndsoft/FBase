@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/FBView" />
             <option value="$PROJECT_DIR$/MBase" />
             <option value="$PROJECT_DIR$/app" />
           </set>

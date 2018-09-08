@@ -1,4 +1,4 @@
-package m.b.bean;
+package f.base;
 
 import java.io.Serializable;
 import java.util.Map;

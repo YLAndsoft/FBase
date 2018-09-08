@@ -1,4 +1,4 @@
-package m.b.base;
+package f.base;
 
 import android.app.Application;
 import android.content.Context;
@@ -16,7 +16,7 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 
 import org.xutils.x;
-import m.b.Config;
+import f.base.BaseConfig;
 import m.b.R;
 
 /**

@@ -1,4 +1,4 @@
-package m.b.base;
+package f.base;
 
 import android.app.Activity;
 import android.content.Context;
@@ -18,7 +18,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.baidu.mobstat.StatService;
 
-import m.b.Config;
+import f.base.BaseConfig;
 import m.b.R;
 import m.b.widget.SystemBarTintManager;
 
@@ -213,15 +213,15 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
      */
     protected final String TAG = "ActivityLog信息：";
     protected void showLog(int level,String msg){
-        if(!Config.isLog){return;}
+        if(!BaseConfig.isLog){return;}
         switch (level){
-            case Config.LEVEL_1:
+            case BaseConfig.LEVEL_1:
                 Log.v(TAG,msg);
                 break;
-            case Config.LEVEL_2:
+            case BaseConfig.LEVEL_2:
                 Log.d(TAG,msg);
                 break;
-            case Config.LEVEL_3:
+            case BaseConfig.LEVEL_3:
                 Log.e(TAG,msg);
                 break;
             default:
@@ -266,12 +266,12 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
     @Override
     protected void onResume() {
         super.onResume();
-        if(Config.isBaiDuStatistics)StatService.onResume(this);
+        if(BaseConfig.isBaiDuStatistics)StatService.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        if(Config.isBaiDuStatistics)StatService.onPause(this);
+        if(BaseConfig.isBaiDuStatistics)StatService.onPause(this);
     }
 }

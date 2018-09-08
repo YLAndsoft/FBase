@@ -1,10 +1,10 @@
-package m.b.base;
+package f.base;
 
 import android.content.Context;
 
 import java.util.List;
 
-import m.b.bean.Params;
+import f.base.Params;
 import m.b.utils.GsonUtils;
 import m.b.utils.NetworkUtils;
 import m.b.utils.StringUtils;

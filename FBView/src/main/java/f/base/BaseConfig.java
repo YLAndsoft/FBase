@@ -1,4 +1,4 @@
-package m.b;
+package f.base;
 
 /**
  * @author: FYL
@@ -6,8 +6,8 @@ package m.b;
  * @email:347933430@qq.com
  * @describe: 工程配置相关
  */
-public class Config {
-    private Config() {
+public class BaseConfig {
+    private BaseConfig() {
         throw new AssertionError();
     }
 

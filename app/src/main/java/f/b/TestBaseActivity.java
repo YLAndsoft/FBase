@@ -3,7 +3,7 @@ package f.b;
 import android.content.Context;
 import android.view.View;
 
-import m.b.base.BaseActivity;
+import f.base.BaseActivity;
 
 /**
  * @author: FYL
@@ -14,6 +14,14 @@ import m.b.base.BaseActivity;
 public class TestBaseActivity extends BaseActivity {
     @Override
     public int bindLayout() {//绑定布局
+        //设置状态栏颜色
+        setSetActionBarColor(true,R.color.colorPrimary);
+        //是否允许屏幕旋转
+        setScreenRoate(false);
+        //是否设置沉浸状态栏
+        setSteepStatusBar(true);
+        //是否允许全屏
+        setAllowFullScreen(true);
         return R.layout.activity_main;
     }
     @Override

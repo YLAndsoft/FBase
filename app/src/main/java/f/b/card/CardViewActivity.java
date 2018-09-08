@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.View;
 
 import f.b.R;
-import m.b.base.BaseActivity;
 
 /**
  * @author: FYL
@@ -12,7 +11,7 @@ import m.b.base.BaseActivity;
  * @email:347933430@qq.com
  * @describe: f.b.card
  */
-public class CardViewActivity extends BaseActivity {
+public class CardViewActivity extends f.base.BaseActivity {
     @Override
     public int bindLayout() {
         return R.layout.card_view_layout;

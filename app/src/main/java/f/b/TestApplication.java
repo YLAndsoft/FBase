@@ -1,7 +1,7 @@
 package f.b;
 
-import m.b.Config;
-import m.b.base.BaseAppLication;
+import f.base.BaseConfig;
+import f.base.BaseAppLication;
 
 /**
  * @author: FYL
@@ -17,7 +17,7 @@ public class TestApplication extends BaseAppLication {
     @Override
     protected void init() {
         //初始化自己需要的逻辑
-        Config.setBaiDuStatistics(false);//是否需要百度统计，默认false
-        Config.setLog(true);//是否需要打印出日志，默认true
+        BaseConfig.setBaiDuStatistics(false);//是否需要百度统计，默认false
+        BaseConfig.setLog(true);//是否需要打印出日志，默认true
     }
 }

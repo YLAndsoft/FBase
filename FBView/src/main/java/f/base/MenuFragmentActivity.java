@@ -1,4 +1,4 @@
-package m.b.base;
+package f.base;
 
 import android.os.Bundle;
 import android.view.View;

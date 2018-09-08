@@ -2,7 +2,7 @@ package f.b;
 
 import android.view.View;
 
-import m.b.base.BaseFragment;
+import f.base.BaseFragment;
 
 /**
  * @author: FYL

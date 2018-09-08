@@ -20,7 +20,7 @@ import f.b.fragments.TestBaseMainActivity;
 import kr.co.namee.permissiongen.PermissionFail;
 import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;
-import m.b.base.BaseActivity;
+import f.base.BaseActivity;
 import m.b.widget.AV;
 import m.b.widget.FP;
 public class MainActivity extends BaseActivity {
