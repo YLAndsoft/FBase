@@ -11,7 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="55dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
+        android:background="@color/bgColor_divier"
         android:gravity="center_vertical">
 
         <ImageView

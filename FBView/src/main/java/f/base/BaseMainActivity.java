@@ -1,17 +1,9 @@
 package f.base;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import org.xutils.view.annotation.ViewInject;
-import org.xutils.x;
-
 import java.util.List;
-
 import m.b.R;
 
 /**

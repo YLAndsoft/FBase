@@ -14,14 +14,10 @@ import f.base.BaseActivity;
 public class TestBaseActivity extends BaseActivity {
     @Override
     public int bindLayout() {//绑定布局
-        //设置状态栏颜色
-        setSetActionBarColor(true,R.color.colorPrimary);
-        //是否允许屏幕旋转
-        setScreenRoate(false);
-        //是否设置沉浸状态栏
-        setSteepStatusBar(true);
-        //是否允许全屏
-        setAllowFullScreen(true);
+        setSetActionBarColor(true,R.color.colorPrimary);//设置状态栏颜色
+        setScreenRoate(false);//是否允许屏幕旋转
+        setSteepStatusBar(true);//是否设置沉浸状态栏
+        setAllowFullScreen(true);//是否允许全屏
         return R.layout.activity_main;
     }
     @Override

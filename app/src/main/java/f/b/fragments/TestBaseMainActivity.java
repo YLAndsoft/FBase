@@ -38,10 +38,7 @@ public class TestBaseMainActivity extends BaseMainActivity {
     ModularFiveFragment pleasureFragment;
 
     private static final int PHOTO_PERMISS = 111;
-    @Override
-    public void initData(Context mContext) {
-        //这里做自己的逻辑处理等
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+    /*if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             PermissionGen.with(TestBaseMainActivity.this)
                     .addRequestCode(PHOTO_PERMISS)
                     .permissions(
@@ -50,7 +47,10 @@ public class TestBaseMainActivity extends BaseMainActivity {
                             Manifest.permission.ACCESS_FINE_LOCATION,
                             Manifest.permission.READ_PHONE_STATE)
                     .request();
-        }
+        }*/
+    @Override
+    public void initData(Context mContext) {
+        //这里做自己的逻辑处理等
     }
     //设置选中图标
     @Override
@@ -77,7 +77,7 @@ public class TestBaseMainActivity extends BaseMainActivity {
     //设置要绑定的模块
     @Override
     public List<Fragment> setFragments() {
-        return getListFragments();
+        return getListFragments();//获取Fragment集合
     }
 
     private List<Fragment> getListFragments(){
