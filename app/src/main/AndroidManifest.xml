@@ -43,6 +43,7 @@
         </activity>
         <activity android:name=".Smart.SmartRefreshActivity" />
         <activity android:name="f.b.card.CardViewActivity" />
+        <activity android:name="f.b.fragments.TestBaseMainActivity" />
 
 
     </application>

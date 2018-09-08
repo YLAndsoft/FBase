@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_menu"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:id="@+id/main_menu_table"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/iv_menu_0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:paddingTop="2dp" />
+
+        <ImageView
+            android:id="@+id/iv_menu_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="2dp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_menu_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="1dp"
+            android:visibility="gone"
+            android:paddingBottom="2dp" />
+
+        <ImageView
+            android:id="@+id/iv_menu_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:paddingTop="2dp" />
+
+
+        <ImageView
+            android:id="@+id/iv_menu_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:paddingTop="2dp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_menu_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/home_txt_line" />
+
+    <TextView
+        android:id="@+id/home_txt_line"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/main_menu_table"
+        android:background="#00000000" />
+
+
+</RelativeLayout>

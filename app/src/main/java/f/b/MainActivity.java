@@ -16,6 +16,7 @@ import org.xutils.x;
 
 import f.b.Smart.SmartRefreshActivity;
 import f.b.card.CardViewActivity;
+import f.b.fragments.TestBaseMainActivity;
 import kr.co.namee.permissiongen.PermissionFail;
 import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;
@@ -132,7 +133,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(mContext, SmartRefreshActivity.class));
                 break;
             case R.id.btn9:
-                startActivity(new Intent(mContext, CardViewActivity.class));
+                startActivity(new Intent(mContext, TestBaseMainActivity.class));
                 break;
         }
     }
