@@ -16,12 +16,22 @@ allprojects {
 
 Step 2. Add the dependency
 dependencies {
-  implementation 'com.github.YLAndsoft:FBase:0.0.4'
+  //BaseActivity等一些base类的依赖
+  implementation 'com.github.YLAndsoft.FBase:FBView:0.0.5'
+  //自定义view,工具，数据库等一些封装,不想用可自行去掉
+  implementation 'com.github.YLAndsoft.FBase:MBase:0.0.5'
 }
 ```
-<h4>混淆配置<h4/>
+<h4>混淆配置,<h4/>
 
 ``` java
+# base工程不做混淆
+-keep class m.b.** {*;}
+# 不混淆资源类
+-keepclassmembers class **.R$* { *; }
+
+# 如果没依赖：implementation 'com.github.YLAndsoft.FBase:MBase:0.0.5',可以不用管下面混淆：
+
 -keep class org.xutils.** { *; }
 -keep class * extends java.lang.annotation.Annotation { *; }
 #EventBus 3.0 混淆配置
@@ -51,10 +61,6 @@ dependencies {
 -keep  class  kr.co.namee.permissiongen.**  {  *; }
 #alertview 混淆配置
 -keep  class  com.bikoo.alertview.**  {  *; }
-# base工程不做混淆
--keep class m.b.** {*;}
-# 不混淆资源类
--keepclassmembers class **.R$* { *; }
 
 异常：Android Error:Execution failed for task ':app:transformClassesAndResourcesWithProguardForRelease'
 原因：Proguard 文件启用时报错，解决方式有两种，一种是如果你要禁用 proguard 文件，直接在项目的 build 文件中将 minifyEnabled 设置为 false，如果不想禁用 proguard 文件，那么可以将 
