@@ -16,7 +16,7 @@ allprojects {
 
 Step 2. Add the dependency
 dependencies {
-  //目前处于半测试阶段,如需使用，进群问群主索要依赖。
+  //目前处于半测试,半使用阶段,如需使用，进群问群主索要依赖。
 }
 ```
 
