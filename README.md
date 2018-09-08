@@ -16,51 +16,11 @@ allprojects {
 
 Step 2. Add the dependency
 dependencies {
-  implementation 'com.github.YLAndsoft:FBase:0.0.4'
+  //BaseActivity等一些base类的依赖
+  implementation 'com.github.YLAndsoft.FBase:FBView:0.0.5'
+  //自定义view,工具，数据库等一些封装,不想用可自行去掉
+  implementation 'com.github.YLAndsoft.FBase:MBase:0.0.5'
 }
-```
-<h4>混淆配置<h4/>
-
-``` java
--keep class org.xutils.** { *; }
--keep class * extends java.lang.annotation.Annotation { *; }
-#EventBus 3.0 混淆配置
--keepattributes *Annotation*
--keepclassmembers class * {
-    @org.greenrobot.eventbus.Subscribe <methods>;
-}
--keep enum org.greenrobot.eventbus.ThreadMode { *; }
-
-#Glide混淆配置
--keep public class * implements com.bumptech.glide.module.GlideModule
--keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
-  **[] $VALUES;
-  public *;
-}
-#GSON 混淆配置
--keepattributes Signature
-# Gson specific classes
--keep class sun.misc.Unsafe { *; }
--keep class com.google.gson.stream.** { *; }
--keep class com.google.gson.examples.android.model.** { *; }
--keep class com.google.gson.** { *;}
-
-#百度统计混淆配置
--keep  class  com.baidu.mobstat.**  {  *; }
-#permissiongen混淆配置
--keep  class  kr.co.namee.permissiongen.**  {  *; }
-#alertview 混淆配置
--keep  class  com.bikoo.alertview.**  {  *; }
-# base工程不做混淆
--keep class m.b.** {*;}
-# 不混淆资源类
--keepclassmembers class **.R$* { *; }
-
-异常：Android Error:Execution failed for task ':app:transformClassesAndResourcesWithProguardForRelease'
-原因：Proguard 文件启用时报错，解决方式有两种，一种是如果你要禁用 proguard 文件，直接在项目的 build 文件中将 minifyEnabled 设置为 false，如果不想禁用 proguard 文件，那么可以将 
--ignorewarnings -keep class * { public private *; } 
-添加到 Proguard 文件中，然后重新编译打包，这样就能解决打包报错的问题了！
-
 ```
 
 ### [详细使用见WIKI](https://github.com/YLAndsoft/FBase/wiki) 
