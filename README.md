@@ -16,10 +16,7 @@ allprojects {
 
 Step 2. Add the dependency
 dependencies {
-  //BaseActivity等一些base类的依赖
-  implementation 'com.github.YLAndsoft.FBase:FBView:0.0.5'
-  //自定义view,工具，数据库等一些封装,不想用可自行去掉
-  implementation 'com.github.YLAndsoft.FBase:MBase:0.0.5'
+  //目前处于半测试,半使用阶段,如需使用，进群问群主索要依赖。
 }
 ```
 
