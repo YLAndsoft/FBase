@@ -2,6 +2,13 @@ package f.base;
 
 import android.support.annotation.NonNull;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+
+import m.b.utils.TimeUtils;
+
 /**
  * @author: FYL
  * @time: 2018/9/3
@@ -32,7 +39,8 @@ public abstract class BaseComparable implements Comparable{
     /**
      * 例子
      */
-   /* static class Age extends BaseComparable{
+   /*
+    public class Age extends BaseComparable{
         int type = 1;
         int age;
         String time;
