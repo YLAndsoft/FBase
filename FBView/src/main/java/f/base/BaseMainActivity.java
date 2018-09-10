@@ -1,10 +1,14 @@
 package f.base;
 
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import java.util.List;
-import m.b.R;
+
+import s.a.b.p.m.fbv.R;
 
 /**
  * @author: FYL
@@ -19,15 +23,18 @@ public abstract class BaseMainActivity extends MenuFragmentActivity {
     private ImageView[] imgBtn = new ImageView[imgIds.length];
     private int[] imageNormals;//未选中图标集合
     private int[] imgsHovers;//选中图标集合
-    private List<Fragment> fragments;
+    private List<Fragment> fragments; //页面集合
+    private LinearLayout main_menu_table;
+    private int tabColor;
     @Override
     public int bindLayout() {
-        setSetActionBarColor(true,R.color.colorPrimary);
+        setSetActionBarColor(true,R.color.transparent);
         return R.layout.base_main_activity;
     }
     @Override
     public void initView(View view) {
         super.initTab(tabResIds);
+        main_menu_table = findViewById(R.id.main_menu_table);
         imgsHovers = selectImags();
         imageNormals = unSelectImags();
         fragments = setFragments();
@@ -48,6 +55,8 @@ public abstract class BaseMainActivity extends MenuFragmentActivity {
             imgBtn[i].setImageResource(imageNormals[i]);
             imgBtn[i].setVisibility(View.VISIBLE);
         }
+        tabColor = R.color.white;
+//        setTabBackgroundColor(tabColor);//设置默认的tab背景颜色
         imgBtn[0].setImageResource(imgsHovers[0]);
         //首次加载第一个Fragment
         switchFragment(flResId, fragments.get(0));
@@ -55,6 +64,9 @@ public abstract class BaseMainActivity extends MenuFragmentActivity {
     public abstract int[] selectImags();//图标
     public abstract int[] unSelectImags();//未选中图标
     public abstract List<Fragment> setFragments();//Fragment集合
+
+
+
     @Override
     protected boolean onTabClick(int tabId) {
         for (int i = 0; i < fragments.size(); i++) {
@@ -85,6 +97,36 @@ public abstract class BaseMainActivity extends MenuFragmentActivity {
 
     @Override
     public void widgetClick(View v) {
+    }
+
+    /**
+     * //设置tab背景颜色
+     * @param color
+     */
+    public void setTabBackgroundColor(int color){
+        if(main_menu_table!=null){
+            main_menu_table.setBackgroundColor(color);
+        }
+    }
+
+    /**
+     * 设置tab背景资源
+     * @param resid
+     */
+    public void setTabBackgroundResource(int resid){
+        if(main_menu_table!=null){
+            main_menu_table.setBackgroundResource(resid);
+        }
+    }
+
+    /**
+     * 设置tab背景drawable
+     * @param drawable
+     */
+    public void setTabBackground(Drawable drawable){
+        if(main_menu_table!=null){
+            main_menu_table.setBackground(drawable);
+        }
     }
 
 }

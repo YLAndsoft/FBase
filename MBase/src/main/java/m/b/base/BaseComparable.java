@@ -1,13 +1,6 @@
-package f.base;
+package m.b.base;
 
 import android.support.annotation.NonNull;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-
-import m.b.utils.TimeUtils;
 
 /**
  * @author: FYL

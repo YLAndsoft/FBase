@@ -16,8 +16,8 @@ import java.util.List;
 
 import f.b.R;
 import f.base.BaseActivity;
-import f.base.BaseRecyclerAdapter;
-import f.base.BaseRecyclerHolder;
+import m.b.base.BaseRecyclerAdapter;
+import m.b.base.BaseRecyclerHolder;
 import m.b.utils.ViewUtils;
 
 /**

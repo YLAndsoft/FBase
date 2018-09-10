@@ -1,6 +1,6 @@
 package f.b;
 
-import f.base.BaseAppLication;
+import m.b.base.BaseAppLication;
 import m.b.db.DBManager;
 import f.base.BaseConfig;
 

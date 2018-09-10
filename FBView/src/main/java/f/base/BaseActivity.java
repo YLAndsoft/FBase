@@ -19,8 +19,7 @@ import android.widget.Toast;
 import com.baidu.mobstat.StatService;
 
 import f.base.BaseConfig;
-import m.b.R;
-import m.b.widget.SystemBarTintManager;
+import s.a.b.p.m.fbv.R;
 
 /**
  * @author: FYL
@@ -45,7 +44,7 @@ public abstract class BaseActivity extends Activity implements View.OnClickListe
     /**上文*/
     protected Context mContext;
     /**默认状态栏的颜色为透明*/
-    private int mResColor = R.color.colorPrimary;
+    private int mResColor = R.color.transparent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

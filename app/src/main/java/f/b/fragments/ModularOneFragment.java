@@ -9,6 +9,7 @@ import org.xutils.x;
 
 import f.b.R;
 import f.b.Smart.SmartRefreshActivity;
+import f.b.card.CardViewActivity;
 import f.base.BaseFragment;
 import m.b.widget.AV;
 import m.b.widget.FP;
@@ -34,8 +35,8 @@ public class ModularOneFragment extends BaseFragment {
     private Button btn7;
     @ViewInject(value = R.id.btn8)
     private Button btn8;
-    @ViewInject(value = R.id.btn9)
-    private Button btn9;
+//    @ViewInject(value = R.id.btn9)
+//    private Button btn9;
     @Override
     public int bindLayout() {
         return R.layout.modularone_layout;
@@ -51,7 +52,7 @@ public class ModularOneFragment extends BaseFragment {
         btn6.setOnClickListener(this);
         btn7.setOnClickListener(this);
         btn8.setOnClickListener(this);
-        btn9.setOnClickListener(this);
+//        btn9.setOnClickListener(this);
     }
     @Override
     public void widgetClick(View v) {
@@ -106,7 +107,7 @@ public class ModularOneFragment extends BaseFragment {
                 startActivity(new Intent(mContext, SmartRefreshActivity.class));
                 break;
             case R.id.btn9:
-                startActivity(new Intent(mContext, TestBaseMainActivity.class));
+//                startActivity(new Intent(mContext, CardViewActivity.class));
                 break;
         }
     }

@@ -5,8 +5,8 @@ import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
 
-import f.base.BaseNetFragment;
-import f.base.Params;
+import m.b.base.BaseNetFragment;
+import m.b.base.Params;
 
 /**
  * @author: FYL

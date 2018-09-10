@@ -5,8 +5,8 @@ import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
 
-import f.base.BaseNetActivity;
-import f.base.Params;
+import m.b.base.BaseNetActivity;
+import m.b.base.Params;
 
 /**
  * @author: FYL

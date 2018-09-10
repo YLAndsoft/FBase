@@ -1,4 +1,4 @@
-package f.base;
+package m.b.base;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -44,7 +44,7 @@ public class Params<T> implements Serializable {
      * @param url
      * @param map
      */
-    public Params(String url,Map<String,String> map){
+    public Params(String url, Map<String,String> map){
         this.URL = url;
         this.map=map;
     }
@@ -56,7 +56,7 @@ public class Params<T> implements Serializable {
      * @param clazz
      * @param isList
      */
-    public Params(String url,Map<String,String> map,Class<T> clazz,boolean isList){
+    public Params(String url, Map<String,String> map, Class<T> clazz, boolean isList){
         this.URL = url;
         this.map=map;
         this.clazz=clazz;

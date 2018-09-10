@@ -1,4 +1,4 @@
-package f.base;
+package m.b.base;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.view.View;
 
+import f.base.BaseActivity;
 import kr.co.namee.permissiongen.PermissionFail;
 import kr.co.namee.permissiongen.PermissionGen;
 import kr.co.namee.permissiongen.PermissionSuccess;

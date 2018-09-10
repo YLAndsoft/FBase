@@ -1,19 +1,23 @@
-package f.base;
+package m.b.base;
+
+import android.content.Context;
 
 import java.util.List;
 
-import f.base.Params;
+import f.base.BaseActivity;
 import m.b.utils.GsonUtils;
 import m.b.utils.NetworkUtils;
 import m.b.utils.StringUtils;
 import m.b.utils.XutilsHttp;
+
 /**
+ * 如想使用网络，可以继承此类，反之，直接继承BaseActivity
  * @author: FYL
  * @time: 2018/9/3
  * @email:347933430@qq.com
  * @describe: base相关
  */
-public abstract class BaseNetFragment extends BaseFragment {
+public abstract class BaseNetActivity extends BaseActivity {
 
     /**
      * 获取参数
@@ -34,7 +38,7 @@ public abstract class BaseNetFragment extends BaseFragment {
     public abstract void onNetError(String error);
 
     @Override
-    protected void initData() {
+    public void initData(Context mContext) {
         final Params params = setParams();
         if(null==params){
             onNetError("未配置参数!");
@@ -82,6 +86,8 @@ public abstract class BaseNetFragment extends BaseFragment {
                 onNetError("网络错误:"+result);
             }
         });
+
     }
+
 
 }

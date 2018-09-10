@@ -3,7 +3,8 @@ package f.base;
 import android.os.Bundle;
 import android.view.View;
 
-import m.b.R;
+import s.a.b.p.m.fbv.R;
+
 /**
  * @author: FYL
  * @time: 2018/9/3

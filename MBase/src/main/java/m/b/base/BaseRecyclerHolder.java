@@ -1,17 +1,13 @@
-package f.base;
+package m.b.base;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-
-import m.b.R;
 import m.b.utils.StringUtils;
 import m.b.utils.ViewUtils;
 
@@ -37,7 +33,7 @@ public class BaseRecyclerHolder extends RecyclerView.ViewHolder {
      * @param itemView 子项
      * @return 返回一个RecyclerHolder对象
      */
-    public static BaseRecyclerHolder getRecyclerHolder(Context context,View itemView){
+    public static BaseRecyclerHolder getRecyclerHolder(Context context, View itemView){
         return new BaseRecyclerHolder(context,itemView);
     }
 
@@ -62,7 +58,7 @@ public class BaseRecyclerHolder extends RecyclerView.ViewHolder {
     /**
      * 设置字符串
      */
-    public BaseRecyclerHolder setText(int viewId,String text){
+    public BaseRecyclerHolder setText(int viewId, String text){
         View view = getView(viewId);
         if(view instanceof TextView){
             TextView textView = (TextView) view;
@@ -73,7 +69,7 @@ public class BaseRecyclerHolder extends RecyclerView.ViewHolder {
     /**
      * 设置text颜色
      */
-    public BaseRecyclerHolder setTextColor(int viewId,int color){
+    public BaseRecyclerHolder setTextColor(int viewId, int color){
         View view = getView(viewId);
         if(view instanceof TextView){
             TextView textView = (TextView) view;
@@ -84,7 +80,7 @@ public class BaseRecyclerHolder extends RecyclerView.ViewHolder {
     /**
      * 设置textSize
      */
-    public BaseRecyclerHolder setTextSize(int viewId,float size){
+    public BaseRecyclerHolder setTextSize(int viewId, float size){
         View view = getView(viewId);
         if(view instanceof TextView){
             TextView textView = (TextView) view;
@@ -116,7 +112,7 @@ public class BaseRecyclerHolder extends RecyclerView.ViewHolder {
      * @param isisibility 是否隐藏
      * @return
      */
-    public BaseRecyclerHolder setVisibility(int viewId,boolean isisibility){
+    public BaseRecyclerHolder setVisibility(int viewId, boolean isisibility){
         if(!isisibility){
             getView(viewId).setVisibility(View.GONE);
         }else{
@@ -128,7 +124,7 @@ public class BaseRecyclerHolder extends RecyclerView.ViewHolder {
     /**
      * 设置图片
      */
-    public BaseRecyclerHolder setImageResource(int viewId,int drawableId){
+    public BaseRecyclerHolder setImageResource(int viewId, int drawableId){
         ImageView iv = getView(viewId);
         iv.setImageResource(drawableId);
         return this;
@@ -148,7 +144,7 @@ public class BaseRecyclerHolder extends RecyclerView.ViewHolder {
      * @TODO 不建议使用，建议自己去加载
      */
     @Deprecated
-    public BaseRecyclerHolder setImageByUrl(int viewId,String url){
+    public BaseRecyclerHolder setImageByUrl(int viewId, String url){
         if(!StringUtils.isEmpty(url)){
 //            Glide.with(context).load(url).error(ContextCompat.getDrawable(context, R.drawable.data_error)).into((ImageView) getView(viewId));
             ViewUtils.setImageUrl(context,(ImageView) getView(viewId),url);

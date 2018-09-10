@@ -1,7 +1,7 @@
 package f.b;
 
 import f.base.BaseConfig;
-import f.base.BaseAppLication;
+import m.b.base.BaseAppLication;
 import m.b.db.DBManager;
 
 /**
