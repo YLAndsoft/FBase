@@ -1,6 +1,9 @@
 package f.b.fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.view.View;
 import android.widget.Button;
 
@@ -104,7 +107,8 @@ public class ModularOneFragment extends BaseFragment {
                         });
                 break;
             case R.id.btn8:
-                startActivity(new Intent(mContext, SmartRefreshActivity.class));
+                Intent intent = new Intent(mContext, SmartRefreshActivity.class);
+                startActivity(intent);
                 break;
             case R.id.btn9:
 //                startActivity(new Intent(mContext, CardViewActivity.class));
@@ -115,7 +119,6 @@ public class ModularOneFragment extends BaseFragment {
     protected void initData() {
 
     }
-
 
 
 
