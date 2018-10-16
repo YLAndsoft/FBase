@@ -51,7 +51,7 @@ dependencies {
     /**弹窗依赖*/
     api 'com.bigkoo:alertview:1.0.3'
 
-    api 'com.androidkun:XTabLayout:1.1.4'
+//    api 'com.androidkun:XTabLayout:1.1.4'
 
 
 }

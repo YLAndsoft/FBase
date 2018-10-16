@@ -28,5 +28,5 @@ dependencies {
     implementation project(':FBView')
     implementation 'com.contrarywind:Android-PickerView:4.1.6'
     implementation 'com.android.support:cardview-v7:26.1.0'
-//    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
 }
