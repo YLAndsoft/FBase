@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/c_66"
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,11 +19,20 @@
     </RelativeLayout>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
         android:textSize="20dp"
         android:text="模块二"/>
+
+    <f.b.cview.CircleView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        app:bg_color="@color/c_66"
+        />
 
 
 </LinearLayout>

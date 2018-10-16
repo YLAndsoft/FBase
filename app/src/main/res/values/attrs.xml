@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleView">
+        <!--颜色值-->
+        <attr name="bg_color" format="color"/>
+        <!--使用某一资源ID-->
+        <attr name="background" format="reference" />
+        <!--boolean：布尔值 -->
+        <attr name="focusable" format="boolean" />
+        <!--浮点值-->
+        <attr name="toAlpha" format="float" />
+        <!--整型值-->
+        <attr name="frameDuration" format="integer" />
+        <!--字符串-->
+        <attr name="apiKey" format="string" />
+        <!--百分数-->
+        <attr name="pivotX" format="fraction" />
+        <!--枚举值-->
+        <attr name="orientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+
+    </declare-styleable>
+
+
+</resources>

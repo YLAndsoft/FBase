@@ -56,7 +56,7 @@ public class SPUtils {
      * @return
      */
     public static int getUserID(Context context){
-        return (int) getInstance(context).getParam("userID",0);
+        return (int) getInstance(context).getValue("userID",0);
     }
     /**
      * 获取用户昵称
@@ -64,7 +64,7 @@ public class SPUtils {
      * @return
      */
     public static String getUserName(Context context){
-        return (String) getInstance(context).getParam("userName","");
+        return (String) getInstance(context).getValue("userName","");
     }
     /**
      * 获取用户头像
@@ -72,7 +72,7 @@ public class SPUtils {
      * @return
      */
     public static String getUserHead(Context context){
-        return (String) getInstance(context).getParam("userHead","");
+        return (String) getInstance(context).getValue("userHead","");
     }
 
     /**
@@ -81,7 +81,7 @@ public class SPUtils {
      * @param values
      */
     public static void saveUserName(Context context,String values){
-        getInstance(context).setParam("userName",values);
+        getInstance(context).setValue("userName",values);
     }
     /**
      * 保存用户头像
@@ -89,7 +89,7 @@ public class SPUtils {
      * @param values
      */
     public static void saveUserHead(Context context,String values){
-        getInstance(context).setParam("userHead",values);
+        getInstance(context).setValue("userHead",values);
     }
     /**
      * 保存用户id
@@ -97,7 +97,7 @@ public class SPUtils {
      * @param values
      */
     public static void saveUserID(Context context,int values){
-        getInstance(context).setParam("userID",values);
+        getInstance(context).setValue("userID",values);
     }
 
 
@@ -107,24 +107,29 @@ public class SPUtils {
      * @param key
      * @param object
      */
-    public void setParam( @NonNull String key,@NonNull  Object object){
-        String type = object.getClass().getSimpleName();
-        if("String".equals(type)){
-            editor.putString(key, (String)object);
+    public void setValue( @NonNull String key,@NonNull  Object object){
+        try{
+            String type = object.getClass().getSimpleName();
+            if("String".equals(type)){
+                editor.putString(key, (String)object);
+            }
+            else if("Integer".equals(type)){
+                editor.putInt(key, (Integer)object);
+            }
+            else if("Boolean".equals(type)){
+                editor.putBoolean(key, (Boolean)object);
+            }
+            else if("Float".equals(type)){
+                editor.putFloat(key, (Float)object);
+            }
+            else if("Long".equals(type)){
+                editor.putLong(key, (Long)object);
+            }
+            editor.apply();
+        }catch (Exception ex){
+            throw new IllegalThreadStateException();
         }
-        else if("Integer".equals(type)){
-            editor.putInt(key, (Integer)object);
-        }
-        else if("Boolean".equals(type)){
-            editor.putBoolean(key, (Boolean)object);
-        }
-        else if("Float".equals(type)){
-            editor.putFloat(key, (Float)object);
-        }
-        else if("Long".equals(type)){
-            editor.putLong(key, (Long)object);
-        }
-        editor.apply();
+
     }
 
 
@@ -134,7 +139,7 @@ public class SPUtils {
      * @param defaultObject
      * @return
      */
-    public Object getParam(@NonNull String key, @NonNull Object defaultObject){
+    public Object getValue(@NonNull String key, @NonNull Object defaultObject){
         String type = defaultObject.getClass().getSimpleName();
 
         if("String".equals(type)){
@@ -308,7 +313,7 @@ public class SPUtils {
 
 
     /**
-     * 移除指定数据
+     * 根据key移除指定数据
      * @param key
      * @return
      */
@@ -321,7 +326,7 @@ public class SPUtils {
 
     /**
      * @TODO 请谨慎使用
-     * 清楚所有SP保存的数据
+     * 清除所有SP保存的数据
      * @param key
      * @return
      */

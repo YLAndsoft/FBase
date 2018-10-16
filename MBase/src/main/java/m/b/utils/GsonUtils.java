@@ -1,6 +1,7 @@
 package m.b.utils;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -27,6 +28,8 @@ public class GsonUtils {
      */
     public static <T> T getGsonObject(String data, Class<T> mClass) {
         try{
+//            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+//            gson.fromJson(data, mClass);
             T result = new Gson().fromJson(data, mClass);
             return result;
         }catch (Exception ex){
